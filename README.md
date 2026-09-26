@@ -10,7 +10,11 @@ regex Router, and every query is raw parameterized SQL.
 ## Run
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt OR
+             pip install Flask==3.0.3
+             pip install PyMySQL==1.1.1
+
+
 python run.py            # http://localhost:5000
 ```
 
