@@ -1,0 +1,47 @@
+{% extends "layout/base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-md-7">
+  <div class="card shadow-sm"><div class="card-body">
+    <h4 class="mb-3">Create an account</h4>
+    <form method="POST" action="/register" novalidate data-validate>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">First name</label>
+          <input name="firstName" class="form-control" required pattern="[A-Za-z ]{2,50}"
+                 maxlength="50" value="{{ old.firstName if old }}">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Last name</label>
+          <input name="lastName" class="form-control" required pattern="[A-Za-z ]{2,50}"
+                 maxlength="50" value="{{ old.lastName if old }}">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required maxlength="100"
+               value="{{ old.email if old }}">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" required minlength="6">
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Location <span class="text-muted">(optional)</span></label>
+          <input name="location" class="form-control" maxlength="100">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Occupation <span class="text-muted">(optional)</span></label>
+          <input name="occupation" class="form-control" maxlength="100">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">About you <span class="text-muted">(optional)</span></label>
+        <textarea name="description" class="form-control" rows="2"></textarea>
+      </div>
+      <button class="btn btn-dark w-100">Register</button>
+    </form>
+  </div></div>
+</div></div>
+{% endblock %}
